@@ -123,8 +123,6 @@ class _HomeScreenState extends State<HomeScreen> {
           // the total available space that the sheet can expand to.
           positioning: SnapPositioning.relativeToAvailableSpace,
         ),
-        // The body widget will be displayed under the SlidingSheet
-        // and a parallax effect can be applied to it.
         body: Container(
           child: Stack(
             children: [
@@ -178,9 +176,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         builder: (context, state) {
-          // This is the content of the sheet that will get
-          // scrolled, if the content is bigger than the available
-          // height of the sheet.
           return Container(
             margin: const EdgeInsets.only(left: 20, top: 30, right: 20),
             height: 500,
@@ -215,19 +210,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           myExpr(FontAwesomeIcons.android, 'Android'),
-                          myExpr(FontAwesomeIcons.aws, 'Firebase'),
-                          myExpr(FontAwesomeIcons.docker, 'Docker'),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+                          myExpr(const Image(image: AssetImage('assets/firebase.png')), 'Firebase'),
                           myExpr(FontAwesomeIcons.github, 'GitHub'),
-                          myExpr(FontAwesomeIcons.amazon, 'Amazon'),
-                          myExpr(FontAwesomeIcons.wordpress, 'WordPress'),
                         ],
                       ),
                       const SizedBox(
@@ -236,9 +220,30 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+
+                          myExpr(const Image(image: AssetImage('assets/amazon.png')), 'Amazon VA'),
+                          myExpr(const Image(image: AssetImage('assets/flutter.png')), 'Flutter'),
                           myExpr(FontAwesomeIcons.appStoreIos, 'iOS'),
-                          myExpr(FontAwesomeIcons.unity, 'Unity'),
-                          myExpr(FontAwesomeIcons.gamepad, 'Game Dev'),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          myExpr(FontAwesomeIcons.filePen, 'Copy Writing'),
+                          myExpr(const Image(image: AssetImage('assets/xd.png')), 'Adobe Xd'),
+                          myExpr(const Image(image: AssetImage('assets/figma.png')), 'Figma')
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          myExpr(const Image(image: AssetImage('assets/canva.png')), 'Canva'),
                         ],
                       ),
                     ],
