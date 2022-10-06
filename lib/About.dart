@@ -112,7 +112,10 @@ class _AboutMeState extends State<AboutMe> {
                         onPressed: () async {
                           const url = 'https://www.linkedin.com/in/muhammad-sheraz-jamil-32b729185';
                           if(await canLaunch(url)){
-                            await launch(url);
+                            await launch(
+                                url,
+                              forceSafariVC: false,
+                            );
                           }
                         },
                         icon: const Icon(
@@ -123,7 +126,10 @@ class _AboutMeState extends State<AboutMe> {
                         onPressed: () async {
                           const url = 'https://github.com/SherazJamil';
                           if(await canLaunch(url)){
-                          await launch(url);
+                          await launch(
+                            url,
+                            forceSafariVC: false,
+                          );
                           }
                         },
                         icon: const Icon(
@@ -134,7 +140,10 @@ class _AboutMeState extends State<AboutMe> {
                         onPressed: () async {
                           const url = 'https://twitter.com/sheraz_j8';
                           if(await canLaunch(url)){
-                          await launch(url);
+                          await launch(
+                              url,
+                            forceSafariVC: false,
+                          );
                           }
                         },
                         icon: const Icon(

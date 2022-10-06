@@ -206,8 +206,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         achivements('20', ' Projects'),
-                        achivements('22', ' Repositories'),
-                        achivements('7', ' Stars'),
+                        achivements('21', ' Repositories'),
+                        achivements('8', ' Stars'),
                       ],
                     ),
                     const SizedBox(

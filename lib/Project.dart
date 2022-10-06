@@ -72,7 +72,10 @@ class _ProjectsState extends State<Projects> {
                     onPressed: () async {
                       const url = 'https://github.com/SherazJamil';
                       if(await canLaunch(url)){
-                      await launch(url);
+                      await launch(
+                          url,
+                        forceSafariVC: false,
+                      );
                       }
                     },
                     icon: const Icon(
