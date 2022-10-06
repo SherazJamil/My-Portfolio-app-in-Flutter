@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:portfolio_app/About.dart';
+import 'package:portfolio_app/Project.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -77,7 +80,7 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: PopupMenuButton(
-            color: Colors.black,
+            color: Colors.amber,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7),
             ),
@@ -91,11 +94,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: const Text(
                       'Projects',
                       style: TextStyle(
+                        fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/project');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const Projects(),
+                        ),
+                      );
                     }),
               ),
               PopupMenuItem(
@@ -103,15 +112,24 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: TextButton(
                     child: const Text(
                       'About Me',
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(
+                          color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/about');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AboutMe(),
+                        ),
+                      );
                     }),
-              )
+              ),
             ]),
       ),
       body: SlidingSheet(
+        color: Colors.amber,
         elevation: 8,
         cornerRadius: 50,
         snapSpec: const SnapSpec(
@@ -156,7 +174,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         style: TextStyle(
                             fontFamily: "Soho",
                             color: Colors.white,
-                            fontSize: 40,
+                            fontSize: 30,
                             fontWeight: FontWeight.bold)
                     ),
                     SizedBox(
@@ -176,79 +194,81 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
         builder: (context, state) {
-          return Container(
-            margin: const EdgeInsets.only(left: 20, top: 30, right: 20),
-            height: 500,
+          return SingleChildScrollView(
             child: Container(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      achivements('20', ' Projects'),
-                      achivements('22', ' Repositories'),
-                      achivements('7', ' Stars'),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const Text(
-                    'Experienced In',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: "Soho",
-                        fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          myExpr(FontAwesomeIcons.android, 'Android'),
-                          myExpr(const Image(image: AssetImage('assets/firebase.png')), 'Firebase'),
-                          myExpr(FontAwesomeIcons.github, 'GitHub'),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
+              margin: const EdgeInsets.only(left: 20, top: 30, right: 20),
+              height: 650,
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        achivements('20', ' Projects'),
+                        achivements('22', ' Repositories'),
+                        achivements('7', ' Stars'),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    const Text(
+                      'Experienced In',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: "Soho",
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            myExpr(FontAwesomeIcons.android, 'Android'),
+                            myExpr(FontAwesomeIcons.appStoreIos, 'iOS'),
+                            myExpr(FontAwesomeIcons.github, 'GitHub'),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
 
-                          myExpr(const Image(image: AssetImage('assets/amazon.png')), 'Amazon VA'),
-                          myExpr(const Image(image: AssetImage('assets/flutter.png')), 'Flutter'),
-                          myExpr(FontAwesomeIcons.appStoreIos, 'iOS'),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          myExpr(FontAwesomeIcons.filePen, 'Copy Writing'),
-                          myExpr(const Image(image: AssetImage('assets/xd.png')), 'Adobe Xd'),
-                          myExpr(const Image(image: AssetImage('assets/figma.png')), 'Figma')
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          myExpr(const Image(image: AssetImage('assets/canva.png')), 'Canva'),
-                        ],
-                      ),
-                    ],
-                  )
-                ],
+                            myExpr(FontAwesomeIcons.figma, 'Figma'),
+                            myExpr(Icons.adobe, 'Adobe Xd'),
+                            myExpr(Iconsax.designtools5, 'Canva'),
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            myExpr(Icons.flutter_dash_rounded, 'Flutter'),
+                            myExpr(FontAwesomeIcons.code, 'Dart'),
+                            myExpr(FontAwesomeIcons.database, 'Firebase')
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            myExpr(FontAwesomeIcons.filePen, 'Copy Writing'),
+                          ],
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           );
